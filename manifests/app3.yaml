@@ -12,14 +12,8 @@ spec:
     helm:
       releaseName: dotnet-template
       parameters:
-        - name: virtualService
-          value:
-            enabled: true
-            hosts:
-              - "*"
-            paths: 
-              - type: exact
-                value: "index.html"
+        - name: virtualService.enabled
+          value: "true"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ad54321
