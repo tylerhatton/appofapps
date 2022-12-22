@@ -1,14 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bookinfo
+  name: ad12345-bookinfo
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: ad54321
   syncPolicy:
-    automated: {}
+    automated: 
+      prune: true
+      selfHeal: true
   source:
     repoURL: https://github.com/tylerhatton/bookinfo.git
     targetRevision: HEAD

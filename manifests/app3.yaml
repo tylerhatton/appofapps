@@ -1,12 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-test
+  name: ad12345-helm-test
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: ad54321
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
   source:
     chart: dotnet-template
     repoURL: https://lab-registry.wwtlab.net/helm-charts/dotnet-template

@@ -1,14 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sampleapp-dotnet
+  name: ad12345-sampleapp-dotnet
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: ad54321
   syncPolicy:
-    automated: {}
+    automated: 
+      prune: true
+      selfHeal: true
   source:
     repoURL: https://bitbucket.org/mattgmoser/schwab-iac-gke-config.git
     targetRevision: HEAD
