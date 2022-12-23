@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ad12345-sampleapp-dotnet
+  name: ad54321-sampleapp-dotnet
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

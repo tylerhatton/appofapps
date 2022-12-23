@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ad12345-bookinfo
+  name: ad54321-bookinfo
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
