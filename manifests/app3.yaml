@@ -14,7 +14,7 @@ spec:
   source:
     chart: dotnet-template
     repoURL: lab-registry.wwtlab.net/charts
-    targetRevision: 0.1.0
+    targetRevision: 0.2.0
     helm:
       releaseName: dotnet-template
       parameters:
