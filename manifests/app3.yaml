@@ -18,8 +18,6 @@ spec:
     helm:
       releaseName: dotnet-template
       parameters:
-        - name: virtualService.enabled
-          value: "false"
         - name: virtualService.paths[0].type
           value: prefix
         - name: virtualService.paths[0].value
