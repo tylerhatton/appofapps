@@ -13,7 +13,7 @@ spec:
       selfHeal: true
   source:
     chart: dotnet-template
-    repoURL: oci://lab-registry.wwtlab.net/helm-charts/dotnet-template
+    repoURL: oci://lab-registry.wwtlab.net/charts
     targetRevision: 0.1.0
     helm:
       releaseName: dotnet-template
