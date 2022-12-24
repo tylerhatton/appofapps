@@ -20,6 +20,14 @@ spec:
       parameters:
         - name: virtualService.enabled
           value: "true"
+        - name: virtualService.paths[0].type
+          value: prefix
+        - name: virtualService.paths[0].value
+          value: /dotnet-template
+        - name: image.repository
+          value: lab-registry.wwtlab.net/images/dotnet-app
+        - name: image.tag
+          value: "build-39"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ad54321
