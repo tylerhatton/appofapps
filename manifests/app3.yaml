@@ -21,7 +21,7 @@ spec:
         - name: virtualService.paths[0].type
           value: prefix
         - name: virtualService.paths[0].value
-          value: /dotnet-template
+          value: /dotnet-template/
         - name: image.repository
           value: lab-registry.wwtlab.net/images/dotnet-app
         - name: image.tag
