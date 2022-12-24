@@ -19,7 +19,7 @@ spec:
       releaseName: dotnet-template
       parameters:
         - name: virtualService.enabled
-          value: "true"
+          value: "false"
         - name: virtualService.paths[0].type
           value: prefix
         - name: virtualService.paths[0].value
