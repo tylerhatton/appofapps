@@ -1,31 +1,37 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: ad54321-helm-test
-#   namespace: argocd
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   project: ad54321
-#   syncPolicy:
-#     automated: 
-#       prune: true
-#       selfHeal: true
-#   source:
-#     chart: dotnet-template
-#     repoURL: lab-registry.wwtlab.net/charts
-#     targetRevision: 0.2.0
-#     helm:
-#       releaseName: dotnet-template
-#       parameters:
-#         - name: virtualService.paths[0].type
-#           value: prefix
-#         - name: virtualService.paths[0].value
-#           value: /dotnet-template/
-#         - name: image.repository
-#           value: lab-registry.wwtlab.net/images/dotnet-app
-#         - name: image.tag
-#           value: "build-39"
-#   destination:
-#     server: "https://kubernetes.default.svc"
-#     namespace: ad54321
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ad54321-helm-test
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: ad54321
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+  source:
+    chart: dotnet-template
+    repoURL: lab-registry.wwtlab.net/charts
+    targetRevision: 0.3.0
+    helm:
+      releaseName: dotnet-template
+      parameters:
+        - name: virtualService.enabled
+          value: "true"
+        - name: virtualService.hosts[0]
+          value: dotnet.apps.wwtlab.net
+        - name: virtualService.gateways[0]
+          value: istio-gateway/apps-gateway
+        - name: virtualService.paths[0].type
+          value: prefix
+        - name: virtualService.paths[0].value
+          value: /
+        - name: image.repository
+          value: lab-registry.wwtlab.net/images/dotnet-app
+        - name: image.tag
+          value: "build-39"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: ad54321
