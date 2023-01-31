@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ad54321-test-app16
+  name: ad54321-test-app17
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,9 +12,9 @@ spec:
       prune: true
       selfHeal: true
   source:
-    repoURL: https://github.com/hattondev/test-app16-infra.git
+    repoURL: https://github.com/hattondev/test-app17-infra.git
     targetRevision: HEAD
-    path: kustomize
+    path: manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: ad54321
