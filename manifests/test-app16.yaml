@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ad54321-test-app16
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: ad54321
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: https://github.com/hattondev/test-app16.git
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ad54321
