@@ -14,7 +14,6 @@ spec:
   source:
     repoURL: https://github.com/hattondev/test-app16.git
     targetRevision: HEAD
-    path: manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: ad54321
