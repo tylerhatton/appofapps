@@ -12,7 +12,7 @@ spec:
       prune: true
       selfHeal: true
   source:
-    repoURL: https://github.com/hattondev/test-app16.git
+    repoURL: https://github.com/hattondev/test-app16-infra.git
     targetRevision: HEAD
     path: kustomize
   destination:
